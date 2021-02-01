@@ -1,0 +1,58 @@
+h1 {
+	color: #3484D2;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+.flex-container {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        background-color: #f5f5dc;
+}
+
+.item {
+        flex: 4;
+        background: #f5f5dc;
+        padding: 1em;
+        border: 1px solid #e7e7e7;
+}
+
+@media only screen and (max-width: 600px) {
+        .item-phone-shift-plus-2 {
+              order: 1;
+        }
+        .item-phone-shift-minus-1 {
+              order: 0;
+        }
+}
+
+.content {
+        background: white;
+        border: 1px solid #eff4f7;
+}
+
+/* Přichycená patička */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.footer {
+  flex: none;
+}

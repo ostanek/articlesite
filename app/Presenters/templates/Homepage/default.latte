@@ -1,0 +1,55 @@
+{block title}Stránka 1{/block}
+{block content}
+<div id="content">
+        <div class="main">
+                
+                {snippet form} {* Snippet pro překreslení formuláře ajaxem. *}
+                <div class="main-form">
+                        
+                        {* Formulář pro editaci. *}
+                        {control editorForm}
+                </div>
+                {/snippet}
+                <div class="img-container">
+                        
+                        {* Obrázek v pravé části. *}
+                        <picture>
+                                <img src="/images/winter-min.jpg" alt="Winter"/>
+                        </picture>
+                </div>
+        </div>
+</div>
+{/block}
+
+{block scripts}
+{include parent}
+{/block}
+
+{block head}
+<style>
+	html { overflow-y: scroll; }
+	body { font: 14px/1.65 Verdana, "Geneva CE", lucida, sans-serif; background: #3484d2; color: #333; }
+	.container { max-width: 940px; }
+
+	h1, h2 { font: normal 150%/1.3 Georgia, "New York CE", utopia, serif; color: #1e5eb6; -webkit-text-stroke: 1px rgba(0,0,0,0); }
+        label { font: normal 120%/1.3 Georgia, "New York CE", utopia, serif; color: #1e5eb6; -webkit-text-stroke: 1px rgba(0,0,0,0); }
+        
+	img { border: none; }
+
+        .navbar { text-align: right; margin: 0; }
+        
+        @media (min-width: 600px) {
+                .main {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr;
+                        grid-template-areas: none;
+                }
+        }
+
+        .img-container { min-height: 100%; display: flex; flex-direction: column; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; flex: 1 1 auto; }
+        
+        #snippet--form { display: grid; justify-content: center; align-content: center; }
+</style>
+{/block}

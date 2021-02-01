@@ -1,0 +1,49 @@
+{block title}Stránka 2{/block}
+{block content}
+<div id="content">
+        <h2>Poslední články:</h2>
+        <table>
+                <tr n:foreach="$articles as $article">
+                        <td>
+                                <h3>{$article->title}</h3>
+                                <p>Obsah: {$article->content}</p>
+                                <div n:inner-foreach="$articlescategories as $articlecategory">
+                                    <p n:if="$article->article_id === $articlecategory->article_id">Kategorie: {$articlecategory->categories}</p>
+                                </div>
+                        </td>
+                </tr>
+        </table>
+        <hr>
+
+        <h2>Počet článků v&nbsp;jednotlivých kategoriích:</h2>
+        <table>
+                <tr n:foreach="$categories as $category">
+                        <td>
+                                <h3>Název kategorie: {$category->title}</h3>
+                                <div n:inner-foreach="$categoriesarticlescounts as $categoriesarticlescount">
+                                    <p n:if="$category->category_id === $categoriesarticlescount->category_id">Počet článků v&nbsp;kategorii:&nbsp;{$categoriesarticlescount->articles_count}</p>
+                                </div>
+                        </td>
+                </tr>
+        </table>
+        <hr>
+
+        <h2>Počet použitých kategorií:</h2>
+        <p>{$usedcategoriescounts}&nbsp;kategorie</p>
+</div>
+{/block}
+
+{block head}
+<style>
+	html { overflow-y: scroll; }
+	body { font: 14px/1.65 Verdana, "Geneva CE", lucida, sans-serif; background: #3484d2; color: #333; }
+	.container { max-width: 940px; }
+
+	h1, h2 { font: normal 150%/1.3 Georgia, "New York CE", utopia, serif; color: #1e5eb6; -webkit-text-stroke: 1px rgba(0,0,0,0); }
+        h3 { font: normal 120%/1.3 Georgia, "New York CE", utopia, serif; color: #1e5eb6; -webkit-text-stroke: 1px rgba(0,0,0,0); }
+
+        .navbar { margin: 0; }
+
+	#content { background: white; border: 1px solid #eff4f7; padding: 10px 4%; overflow: hidden; }
+</style>
+{/block}
