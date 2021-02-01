@@ -5,7 +5,7 @@ articlesite
 Installation
 ------------
 
-Please run init.sql script for your database initialization.
+Please run init.sql script in your database for its initialization and set your database connection in file /config/common.neon.
 
 
 Web Server Setup
