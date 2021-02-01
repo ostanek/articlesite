@@ -11,5 +11,3 @@
 !/log/.htaccess
 /temp/*
 !/temp/.htaccess
-/log/*.log
-/temp
